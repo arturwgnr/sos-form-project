@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# SOS Form Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React + TypeScript system for generating and managing service reports for **SOS Transpaletes**.  
+It allows creating digital reports for **pallet jacks** and **forklifts**, saving them as PDFs, storing them in history, and manually uploading documents.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📄 PDF report generation:
+  - Pallet jack
+  - Forklift
+- ✍️ Digital signatures (client and responsible)
+- 📂 Report history:
+  - View previous records
+  - Download generated PDFs
+  - Manually upload existing reports
+- 🔑 Unique IDs for each report (separated by type)
+- 📱 Responsive interface (desktop and mobile)
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + TypeScript
+- Vite
+- pdf-lib (PDF generation)
+- LocalStorage (report storage)
+- Pure CSS for responsive styling
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📌 How to run the project
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone this repository:
+   ```
+   git clone https://github.com/arturwgnr/sos-form-project.git
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Enter the folder:
+   ```
+   cd sos-form-project
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. Run the project:
+   ```
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5. Open in browser:
+   ```
+   http://localhost:5173
+   ```
+
+## 📲 Usage
+
+1. Fill in the report fields.
+2. Add signatures (client and responsible).
+3. Generate the PDF.
+4. Use the history tab to view or download past reports.
+5. If needed, manually upload existing reports.
+
+---
+
+👨‍💻 Developed by **Artur Wagner**
