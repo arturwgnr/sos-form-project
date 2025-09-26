@@ -133,7 +133,7 @@ export default function History() {
         <button type="submit">➕ Adicionar ao histórico</button>
       </form>
 
-      <h1>Histórico de Relatórios</h1>
+      
 
       {/* Mobile (cards) */}
       <div className="history-cards">

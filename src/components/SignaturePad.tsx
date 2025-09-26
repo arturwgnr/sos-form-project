@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import SignatureCanvas from "react-signature-canvas";
-import trimCanvas from "trim-canvas"; // importa direto
 import "../css/SignaturePad.css";
 
 interface SignaturePadProps {
