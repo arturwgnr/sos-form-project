@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../css/PalletReport.css";
 import SignaturePad from "../components/SignaturePad";
 import { generatePalletReportPDF } from "../utils/pdfGenerator";
-import { generateReportId } from "../utils/idGenerator";
+import { generatePalletReportId } from "../utils/idGenerator";
 
 export default function PalletReport() {
   const [formData, setFormData] = useState({
@@ -43,12 +43,24 @@ export default function PalletReport() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      const id = generateReportId();
-      console.log("Formulário válido:", { ...formData, id });
+  const id = generatePalletReportId();
+  const pdfUrl = await generatePalletReportPDF({ ...formData, id });
 
-      await generatePalletReportPDF({ ...formData, id });
-      alert("✅ PDF gerado com sucesso!");
-    }
+  // Salva no histórico
+  const newReport = {
+    id,
+    type: "paleteira",
+    client: formData.client,
+    date: new Date().toISOString(),
+    pdfUrl,
+  };
+
+  const saved = JSON.parse(localStorage.getItem("reports") || "[]");
+saved.push(newReport);
+localStorage.setItem("reports", JSON.stringify(saved));
+
+alert("✅ PDF gerado e salvo no histórico!");
+}
   };
 
   return (

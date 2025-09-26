@@ -1,7 +1,19 @@
 // src/utils/idGenerator.ts
-export function generateReportId(): string {
-  const lastId = localStorage.getItem("lastReportId");
+
+// Paleteira
+export function generatePalletReportId(): string {
+  const key = "pallet_lastReportId";
+  const lastId = localStorage.getItem(key);
   const nextId = lastId ? parseInt(lastId) + 1 : 1;
-  localStorage.setItem("lastReportId", nextId.toString());
-  return String(nextId).padStart(4, "0"); // exemplo: 0001, 0002
+  localStorage.setItem(key, nextId.toString());
+  return String(nextId).padStart(4, "0"); // 0001, 0002...
+}
+
+// Empilhadeira
+export function generateForkliftReportId(): string {
+  const key = "forklift_lastReportId";
+  const lastId = localStorage.getItem(key);
+  const nextId = lastId ? parseInt(lastId) + 1 : 1;
+  localStorage.setItem(key, nextId.toString());
+  return String(nextId).padStart(4, "0");
 }

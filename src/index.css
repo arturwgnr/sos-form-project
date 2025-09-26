@@ -40,8 +40,8 @@ body,
 [data-theme="dark"] {
   --color-background: linear-gradient(
     140deg,
-    #375075,
-    #041e3d
+    #234768,
+    #092950
   ); /* fundo azul */
   --color-surface: var(--color-white); /* form branco */
   --color-text: var(--color-primary); /* texto azul */

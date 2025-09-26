@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/sos-logo.png"; // importa logo
 import "../css/TopBar.css";
 
 export default function TopBar() {
@@ -9,9 +10,11 @@ export default function TopBar() {
   return (
     <header className="topbar">
       <div className="topbar-container">
-        <h2 onClick={() => nav("/")} className="logo">
-          SOS Transpaletes
-        </h2>
+        {/* Logo + texto */}
+        <div className="logo-container" onClick={() => nav("/")}>
+          <img src={logo} alt="SOS Transpaletes Logo" className="logo-img" />
+          <h2 className="logo-text">SOS Transpaletes</h2>
+        </div>
 
         {/* Botão hamburguer */}
         <div
@@ -25,6 +28,9 @@ export default function TopBar() {
 
         {/* Nav links */}
         <nav className={`topbar-nav ${menuOpen ? "show" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            Inicio
+          </Link>
           <Link to="/pallet" onClick={() => setMenuOpen(false)}>
             Paleteira
           </Link>

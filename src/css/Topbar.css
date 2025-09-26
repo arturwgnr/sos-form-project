@@ -1,5 +1,5 @@
 .topbar {
-  background: rgba(6, 32, 66, 0.973); /* azul escuro translúcido */
+  background: rgba(6, 32, 66, 0.932); /* azul escuro translúcido */
   color: var(--color-white);
   padding: 0.8rem 1.5rem;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.473);
@@ -61,7 +61,7 @@
 
 /* Animação do X */
 .burger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 .burger.open span:nth-child(2) {
   opacity: 0;
@@ -105,4 +105,22 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  height: 50px; /* ajusta conforme necessário */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-white);
 }

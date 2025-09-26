@@ -80,7 +80,7 @@ export async function generatePalletReportPDF(data: ReportData) {
     size: 10,
     font,
   });
-  page.drawText("Tel: (31) 2559-3533 | (31) 99411-0033", {
+  page.drawText("Tel: (31) 2559-3533 | (31) 9340-0419", {
     x: 140,
     y: height - 110,
     size: 10,
@@ -213,13 +213,9 @@ export async function generatePalletReportPDF(data: ReportData) {
 
   // Exporta
   const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: "application/pdf" });
-  const url = URL.createObjectURL(blob);
+const base64 = btoa(
+  new Uint8Array(pdfBytes).reduce((data, byte) => data + String.fromCharCode(byte), "")
+);
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `Relatorio-Paleteira-${data.id}.pdf`;
-  link.click();
-
-  URL.revokeObjectURL(url);
+return `data:application/pdf;base64,${base64}`;
 }
